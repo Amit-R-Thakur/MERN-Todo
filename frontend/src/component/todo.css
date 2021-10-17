@@ -1,107 +1,161 @@
-.mainDiv
-{
-    height: 100%;
-    width: 100%;
-    position:relative;
-    background: #6a3093;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+@import url("https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap");
+.mainDiv {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: hsla(238, 100%, 71%, 1);
 
-}
-.todoDiv
-{
-    position:absolute;
-    left: 33%;
-    right: 33%;
-    top:5%;
-    bottom: 5%;
-    /* background-color:aqua; */
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: 10% 6% 1fr;
+  background: linear-gradient(
+    90deg,
+    hsla(238, 100%, 71%, 1) 0%,
+    hsla(295, 100%, 84%, 1) 100%
+  );
 
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(238, 100%, 71%, 1) 0%,
+    hsla(295, 100%, 84%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(238, 100%, 71%, 1) 0%,
+    hsla(295, 100%, 84%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#696EFF", endColorstr="#F8ACFF", GradientType=1 );
+}
+.todoDiv {
+  position: absolute;
+  left: 33%;
+  right: 33%;
+  top: 5%;
+  bottom: 5%;
+  /* background-color:aqua; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 10% 6% 1fr;
+  padding: 7px;
+  border: 2px solid black;
+  box-shadow: 1px 1px 8px 4px rgba(0,0,0,0.57);
+-webkit-box-shadow: 1px 1px 8px 4px rgba(0,0,0,0.57);
+-moz-box-shadow: 1px 1px 8px 4px rgba(0,0,0,0.57);
 }
 
-.headeDiv h1
-{
-    padding-left: 6%;
-    padding-top: 7px;
-    font-size: 1.7rem;
+.headeDiv h1 {
+  padding-left: 5%;
+  padding-top: 1px;
+  font-size: 1.7rem;
+  font-family: "Scheherazade New", serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
 
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
-.content
-{
-    padding: 5px;
-    text-align: center;
-    width: 70%;
-    font-weight: bold;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin-left: 5%;
+.content {
+  padding: 5px;
+  text-align: center;
+  width: 70%;
+  font-weight: bold;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 5%;
 }
-.plus{
-    padding: 5px;
-    margin-left:2%;
-    width: 40px;
-    background: #B24592;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: white;
-border-radius: 5px;
-border: none;
-font-size: 18px;
-cursor: pointer;
+.plus {
+  padding: 5px;
+  margin-left: 2%;
+  width: 40px;
+  background: #b24592; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f15f79,
+    #b24592
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f15f79,
+    #b24592
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
-.content:focus{
-    outline: none;
-
+.content:focus {
+  outline: none;
 }
-.contentDiv
-{
-    /* background-color: violet; */
-    margin-top: 2%;
-    padding: 0.2%;
-    overflow: auto;
+.contentDiv {
+  /* background-color: violet; */
+  margin-top: 2%;
+  padding: 0.2%;
+  overflow: auto;
 }
-.contentDiv::-webkit-scrollbar{
-    display: none;
+.contentDiv::-webkit-scrollbar {
+  display: none;
 }
-.mainContent
-{
-    display: grid;
-    grid-template-columns: 78% 1fr;
-    height: 40px;
-    margin: 2%;
-    border-radius: 4px;
-   background-color:  rgb(245,245,245);
-   padding:3px;
+.mainContent {
+  display: grid;
+  grid-template-columns: 78% 1fr;
+  height: 40px;
+  margin: 2%;
+  border-radius: 4px;
+  background-color: rgb(245, 245, 245);
+  padding: 3px;
 }
-.realText
-{
-    /* background-color: violet; */
-    text-align: center;
-    padding-top: 1%;
-    padding: 2%;
-
+.realText {
+  /* background-color: violet; */
+  text-align: center;
+  padding-top: 1%;
+  padding: 2%;
 }
-.task
-{
-    /* background-color: yellowgreen; */
-    display: grid;
-    grid-template-columns:45%  45%;
-    text-align: center;
-    font-size: 1.5rem;
-    column-gap: 5%;
-    padding: 4%;
-    padding-top: 2%;
-    margin-left: 3%;
-   
-
+.task {
+  /* background-color: yellowgreen; */
+  display: grid;
+  grid-template-columns: 45% 45%;
+  text-align: center;
+  font-size: 1.5rem;
+  column-gap: 5%;
+  padding: 4%;
+  padding-top: 2%;
+  margin-left: 3%;
 }
-.task i{
-    cursor: pointer;
+.task button {
+  background: none;
+  border: none;
 }
-.fa-edit{color: rgb(47, 255, 92);}
-.fa-trash-alt{color: red;}
+.task i {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  /* background-color: aqua; */
+  font-size: 1.5rem;
+}
+.fa-edit {
+  color: rgb(47, 255, 92);
+}
+.fa-trash-alt {
+  color: red;
+}

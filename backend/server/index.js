@@ -8,9 +8,7 @@ require("../server/database/connect/connect")
 const port=process.env.port||4000
 const todoData=require("./database/modules/todoData")
 
-app.listen(port,()=>{
-    console.log(`App is running on port no ${port}`)
-})
+
 app.get("/getAllData",async(req,res)=>{
  const data=await todoData.find({});
  console.log(data);
@@ -23,4 +21,31 @@ app.post("/getData",async(req,res)=>{
     await newtodoData.save()
     res.json("data saved")
    
+})
+
+app.delete("/deletedata/:id",async(req,res)=>{
+    try{
+        const deletData=await todoData.findByIdAndRemove({_id:req.params.id})
+        res.send(deletData)
+
+    }
+    
+    catch(err){
+        console.log(err)
+
+    }
+})
+app.get("/getDataById:id",async(req,res)=>{
+       console.log(req.params)
+    res.send(await todoData.findById({_id:req.params.id}))
+})
+
+app.patch("/updatetodo:id",async(req,res)=>{
+    console.log(req.params.id)
+    console.log(req.body)
+    res.send(await todoData.findByIdAndUpdate({_id:req.params.id},{$set:{content:req.body.content}}))
+})
+
+app.listen(port,()=>{
+    console.log(`App is running on port no ${port}`)
 })
